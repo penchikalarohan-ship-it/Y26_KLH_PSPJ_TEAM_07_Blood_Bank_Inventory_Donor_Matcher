@@ -14,17 +14,17 @@ public class BloodBankInventory {
         System.out.println("=== Blood Bank Inventory & Donor Matcher ===");
 
         // Add Donors
-        System.out.print("Enter number of donors: ");
+        System.out.println("Enter number of donors: ");
         int n = sc.nextInt();
         sc.nextLine();
 
         for (int i = 0; i < n; i++) {
             System.out.println("Donor " + (i + 1));
 
-            System.out.print("Enter Donor Name: ");
+            System.out.println("Enter Donor Name: ");
             donorNames[i] = sc.nextLine();
 
-            System.out.print("Enter Blood Group (A+, A-, B+, B-, AB+, AB-, O+, O-): ");
+            System.out.println("Enter Blood Group (A+, A-, B+, B-, AB+, AB-, O+, O-): ");
             bloodGroups[i] = sc.nextLine();
 
             count++;
@@ -37,7 +37,7 @@ public class BloodBankInventory {
         }
 
         // Match Donor
-        System.out.print("Enter Required Blood Group: ");
+        System.out.println("Enter Required Blood Group: ");
         String requiredGroup = sc.nextLine();
 
         boolean found = false;
@@ -45,7 +45,7 @@ public class BloodBankInventory {
         System.out.println("Matching Donors:");
 
         for (int i = 0; i < count; i++) {
-            if (bloodGroups[i]==(requiredGroup)) {
+            if (bloodGroups[i].equalsIgnoreCase(requiredGroup)) {
                 System.out.println("Donor Name: " + donorNames[i]);
                 System.out.println("Blood Group: " + bloodGroups[i]);
                 System.out.println("----------------------");
